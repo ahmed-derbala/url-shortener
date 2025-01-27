@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "a9d8ab28-46c6-4554-9592-53ef25285a36",
+		"name": "url-shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32889223"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5001/api/urls/shorten",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"originalUrl\":\"facebook.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/api/urls/shorten",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"urls",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5001/api/urls/S8qSOi7_S",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/api/urls/S8qSOi7_S",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"urls",
+						"S8qSOi7_S"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
