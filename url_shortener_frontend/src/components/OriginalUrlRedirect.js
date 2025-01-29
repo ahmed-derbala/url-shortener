@@ -9,10 +9,13 @@ const OriginalUrlRedirect = () => {
 
   useEffect(() => {
     const fetchOriginalUrl = async () => {
-      const result = await getOriginalUrl(shortId);
+      let result = await getOriginalUrl(shortId);
 
       if (result) {
         setOriginalUrl(result);
+        if (!/^https?:\/\//i.test(result)) {
+          result = "https://" + result;
+      }
          window.location.href = result; // Redirect to original URL
 
       } else {
