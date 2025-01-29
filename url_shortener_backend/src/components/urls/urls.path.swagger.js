@@ -22,11 +22,10 @@ module.exports = {
 								default: 'https://fb.com',
 								required: false,
 								description: 'a sample long url'
-							},
-							
+							}
 						}
 					}
-				},
+				}
 			],
 			components: {
 				securitySchemes: {
@@ -65,7 +64,7 @@ module.exports = {
 			} //responses is a must to execute the request
 		}
 	},
-	
+
 	'/api/urls/{shortId}': {
 		get: {
 			tags: [urlsTag.name],
@@ -79,7 +78,7 @@ module.exports = {
 					in: 'path',
 					description: 'shortId',
 					name: 'shortId'
-				},				
+				}
 			],
 			components: {
 				securitySchemes: {

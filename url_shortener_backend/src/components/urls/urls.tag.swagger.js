@@ -5,6 +5,6 @@ module.exports = {
 		externalDocs: {
 			description: 'frontend application',
 			url: 'http://localhost:3000'
-		} 
+		}
 	}
 }

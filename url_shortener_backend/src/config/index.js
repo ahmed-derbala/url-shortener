@@ -61,10 +61,7 @@ const port = parseInt(process.env.DATABASE_PORT, 10) || 27017
 const name = packagejson.name
 const maxPoolSize = 200 //number > 0 otherwise ignored, default 200, more infos: https://mongoosejs.com/docs/connections.html#connection_pools
 const minPoolSize = 5 //number > 0 otherwise ignored, default 5, more infos: https://mongoosejs.com/docs/connections.html#connection_pools
-let uri = ``
-
-if (!user && !password) uri = `mongodb://${host}:${port}/${name}`
-else uri = `mongodb://${user}:${password}@${host}:${port}/${name}`
+let uri = 'mongodb+srv://ahmed:derbala@free-cluster.b92wx.mongodb.net/?retryWrites=true&w=majority&appName=free-cluster'
 
 let db = {
 	primary: 'mongodb',
@@ -84,6 +81,7 @@ let db = {
 		options: {
 			port: 5000,
 			legacyMode: true,
+			url: 'redis://default:rNfIsJ59qaKkYKiYhdaOnGKj2InL2nZC@redis-14122.c246.us-east-1-4.ec2.redns.redis-cloud.com:14122'
 		}
 	}
 }
@@ -167,8 +165,7 @@ const defaultConfig = {
 		/*get url() {
 			return `${this.protocol}${this.host}:${this.port}`
 		}*/
-		url:"http://localhost:3000"
-
+		url: 'http://localhost:3000'
 	},
 	auth: {
 		saltRounds: 10,

@@ -11,9 +11,7 @@ const { log } = require('../../core/log')
 const { resp } = require('../../core/helpers/resp')
 const { urlVld, shortIdVld } = require('./urls.validator')
 const { validate } = require('../../core/validation')
-const shortid = require('shortid');
-
-
+const shortid = require('shortid')
 
 /**
  * @api {post} /shorten Shorten a URL
@@ -40,14 +38,13 @@ const shortid = require('shortid');
 router.post('/shorten', validate(urlVld), async (req, res) => {
 	try {
 		const { originalUrl } = req.body
-		const shortId = shortid.generate();
+		const shortId = shortid.generate()
 		const data = await createShortUrlSrvc({ originalUrl, shortId })
 		return resp({ status: 200, data, req, res })
 	} catch (err) {
 		errorHandler({ err, req, res })
 	}
 })
-
 
 /**
  * @api {get} /:shortId Resolve a Shortened URL
@@ -81,6 +78,5 @@ router.get('/:shortId', validate(shortIdVld), async (req, res) => {
 		errorHandler({ err, req, res })
 	}
 })
-
 
 module.exports = router

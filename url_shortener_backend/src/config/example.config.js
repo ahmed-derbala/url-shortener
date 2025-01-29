@@ -83,7 +83,7 @@ let db = {
 	redis: {
 		options: {
 			port: 5000,
-			legacyMode: true,
+			legacyMode: true
 		}
 	}
 }
@@ -167,8 +167,7 @@ const defaultConfig = {
 		/*get url() {
 			return `${this.protocol}${this.host}:${this.port}`
 		}*/
-		url:"http://localhost:3000"
-
+		url: 'http://localhost:3000'
 	},
 	auth: {
 		saltRounds: 10,

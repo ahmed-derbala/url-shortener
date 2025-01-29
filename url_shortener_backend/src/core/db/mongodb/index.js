@@ -7,7 +7,7 @@ const connectMongodb = async () => {
 	try {
 		await mongoose.connect(config.db.mongodb.uri, config.db.mongodb.options)
 		log({
-			message: `db-conn-success | Mongodb | ${config.db.mongodb.name} | ${config.db.mongodb.host}:${config.db.mongodb.port}`,
+			message: `db-conn-success | Mongodb | ${config.db.mongodb.name} | ${config.db.mongodb.uri} | ${config.db.mongodb.host}:${config.db.mongodb.port}`,
 			level: 'success'
 		})
 	} catch (err) {

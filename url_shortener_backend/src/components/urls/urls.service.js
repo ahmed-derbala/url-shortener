@@ -3,8 +3,7 @@ const { errorHandler } = require('../../core/utils/error')
 const { log } = require('../../core/log')
 const { createUrlRepo, findOneOriginalUrlRepo } = require('./urls.repository')
 const config = require(`../../config`)
-const redisClient =require('../../core/db/redis')
-
+const redisClient = require('../../core/db/redis')
 
 /**
  * Creates a shortened URL and stores it in the repository and Redis cache.
@@ -21,7 +20,7 @@ module.exports.createShortUrlSrvc = async ({ originalUrl, shortId }) => {
 	try {
 		const shortUrl = `${config.frontend.url}/${shortId}`
 		const createdUrl = await createUrlRepo({ originalUrl, shortUrl, shortId })
-		redisClient.set(shortUrl, originalUrl);
+		redisClient.set(shortUrl, originalUrl)
 
 		return createdUrl
 	} catch (err) {
@@ -41,13 +40,13 @@ module.exports.createShortUrlSrvc = async ({ originalUrl, shortId }) => {
  */
 module.exports.findOneOriginalUrlSrvc = async ({ shortId }) => {
 	try {
-		 redisClient.get(shortId, async (err, cachedUrl) => {
+		redisClient.get(shortId, async (err, cachedUrl) => {
 			if (err) {
 				return errorHandler({ err })
 			}
-	  
+
 			if (cachedUrl) {
-			  return (cachedUrl);
+				return cachedUrl
 			}
 		})
 		const originalUrl = await findOneOriginalUrlRepo({ shortId })
