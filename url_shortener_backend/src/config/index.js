@@ -7,7 +7,7 @@ const ip = require('ip')
 const fs = require('fs')
 
 const backend = {
-	port: 5001,
+	port: process.env.PORT || 5001,
 	host: `${ip.address()}`,
 	protocol: 'http://',
 	get url() {
