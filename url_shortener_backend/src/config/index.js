@@ -165,7 +165,7 @@ const defaultConfig = {
 		/*get url() {
 			return `${this.protocol}${this.host}:${this.port}`
 		}*/
-		url: 'http://localhost:3000'
+		url: 'https://url-shortener-40o7dq4rc-ahmed-derbalas-projects.vercel.app'
 	},
 	auth: {
 		saltRounds: 10,
